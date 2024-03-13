@@ -289,8 +289,8 @@ fn vs_points(@builtin(vertex_index) vertex_index: u32) -> PointOutput {
     let lambda_2 = mid - sqrt(max(0.1, mid * mid - det));
     let radius_px = ceil(3. * sqrt(max(lambda_1, lambda_2)));
     let radius_ndc = vec2<f32>(
-    radius_px / (canvas_height),
     radius_px / (canvas_width),
+    radius_px / (canvas_height),
     );
     output.conic_and_opacity = vec4<f32>(conic, sigmoid(point.opacity_logit));
 
